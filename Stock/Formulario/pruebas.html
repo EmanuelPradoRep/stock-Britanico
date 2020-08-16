@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selects dependientes JavaScript</title>
+</head>
+
+<body>
+
+    <select id="provincias" name="provincias">
+        <option codigo="03" value="03">Alicante</option>
+        <option codigo="12" value="12">Castellón</option>
+        <option codigo="46" value="46">Valencia</option>
+    </select>
+
+    <select id="poblaciones" name="poblaciones">
+        <option codigo="12" value="1">Aín</option>
+        <option codigo="46" value="2">Sueca</option>
+        <option codigo="46" value="3">Liria</option>
+        <option codigo="12" value="4">Almenara</option>
+        <option codigo="03" value="5">Denia</option>
+        <option codigo="03" value="6">Altea</option>
+    </select>
+
+
+ <script type="text/javascript">
+        // Consigue el elemento provincias/poblaciones por su identificador id. Es un método del DOM de HTML
+        var id1 = document.getElementById("provincias");
+        var id2 = document.getElementById("poblaciones");
+        
+        // Añade un evento change al elemento id1, asociado a la función cambiar()
+        if (id1.addEventListener) {     // Para la mayoría de los navegadores, excepto IE 8 y anteriores
+            id1.addEventListener("change", cambiar);
+        } else if (id1.attachEvent) {   // Para IE 8 y anteriores
+            id1.attachEvent("change", cambiar); // attachEvent() es el método equivalente a addEventListener()
+        }
+
+        // Definición de la función cambiar()
+        function cambiar() {
+            for (var i = 0; i < id2.options.length; i++)
+            
+            // -- Inicio del comentario -- 
+            // Muestra solamente los id2 que sean iguales a los id1 seleccionados, según la propiedad display
+            if(id2.options[i].getAttribute("codigo") == id1.options[id1.selectedIndex].getAttribute("codigo")){
+                id2.options[i].style.display = "block";
+            }else{
+                id2.options[i].style.display = "none";
+            }
+            // -- Fin del comentario --
+                    
+            id2.value = "";
+        }
+
+        // Llamada a la función cambiar()
+        cambiar();
+    </script>
+    
+</body>
+
+
+
+</html>
+

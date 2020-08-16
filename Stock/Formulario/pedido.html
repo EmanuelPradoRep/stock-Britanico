@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="../Menu/Estilo_Formulario/css.css">
+<link rel="stylesheet" href="../Bootstrap/css/bootstrap.css">
+<title>Formulario</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="estilo.css" rel="stylesheet" type="text/css" />
+<script src="SpryValidationTextField.js" type="text/javascript"></script>
+<link href="SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+<script src="funciones.js" rel="text/javascript"></script>
+
+
+
+</head>
+
+<div id="cabezal">
+
+<div id ="logo">
+<img  src="../Images/logo3.jpg" /></div>
+
+</div>
+
+
+
+<div id="container">
+        <nav>
+        <ul>
+            <li><a href="../Menu/Inicio.html">Inicio</a></li>
+            <li><a href="#">Ingresar Dispositivo <i class="down"></i></a>
+            <!-- Primer Menu Desplegable -->
+			
+			 
+            <ul>
+                <li><a href="../Ingresar_Disp/Ingresar_Pc.html">PC</a></li>
+              <li><a href="../Ingresar_Disp/Ingresar_Impresoras.html">Impresoras</a></li>
+                <li><a href="#">Monitores</a></li>
+				 <li><a href="#">Camaras</a></li>
+				 
+            </ul>        
+           
+			
+			 
+<li><a href = "../Formulario/pedido.html" > Pedidos<i class="down"></i></a>
+<ul>
+<li><a href="../Formulario/pedido.html">Hacer Pedido</a></li>
+<li><a href="../Formulario/Listar_Pedido.php">Ver pedido</a></li>
+<li><a href="../Formulario/Listar_pedidoconf.php">Pedidos Confi.</a></li>
+   </ul>   
+
+</ul>
+			
+			
+			
+    </nav>
+ 
+ 
+ 
+</div>
+
+
+
+<body class="centro" onLoad="cargar_variables()">
+
+<div id="formulario">
+
+ <form action="pagPedido.php" method="post">
+        <table class = "table-striped" width="100%">
+          <tr>
+       
+		  
+            <td colspan="2" ><table  width="600px"   align="center">
+			  
+			
+                <tr>
+                  <td width="25%">Elija un producto:</td>
+
+                  <td><span id="elegir_producto" >
+                    <select  class="form-control" name="producto_select" id="producto_select" onchange="elegir_producto_aceptar()"  tabindex="12">
+                      <option value="elegir">Elegir un Producto</option>
+                      <option value="PC">01 - PC</option>
+                      <option value="IMPRESORAS">02 - IMPRESORAS</option>
+                      <option value="MONITORES">03 - MONITORES</option>
+                      <option value="CAMARAS">04 - CAMARAS</option>
+					   <option value="OTRO">04 - OTRO</option>
+
+                     
+                    </select>
+                    </span></td>
+                </tr>
+                <tr>
+                  <td>Elija un Art&iacute;culo:</td>
+                  <td><div id="codigo_elegir">
+
+                      <select  class="form-control" name="subproducto_select" id="subproducto_select"  tabindex="13">
+                        <option value="elegir">Elegir</option>
+                      </select>
+                    </div></td>
+                </tr>
+                <tr>
+				   <td>Proveedor:</td>
+				 <td><select  class="form-control" name="Proveedor" id="Proveedor"  tabindex="13">
+                        <option value="elegir">Elegir</option>
+						<option value="ACSSA">ACSSA</option>
+						<option value="CEIPRIN">CEIPRIN</option>
+						<option value="CONATEL">CONATEL</option>
+						<option value="IBM">IBM</option>
+						<option value="IDS">IDS</option>
+						<option value="OFFICE 2000">OFFICE 2000</option>
+						<option value="PALSER">PALSER</option>
+						<option value="TELECTRONICA">TELECTRONICA</option>
+						
+                      </select> </td>
+				
+				<tr>
+				
+                  <td>Cantidad:</td>
+                  <td><input class="form-control" name="producto_cantidad" type="text" id="producto_cantidad" tabindex="15"/></td>
+
+                </tr>
+              </table>
+              <div align="center">
+                <input type="button"  class="btn btn-primary btn-sm" value="Agregar a la lista" onClick="agregar_producto_aceptar()"  tabindex="16"/>
+              </div></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="left" name="lista_productos_pedidos", id="">&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td colspan="2" align="center"><strong>LISTA DE PRODUCTOS</strong></td>
+          </tr>
+		  
+		  
+          <tr>
+		  
+		  
+		  
+          <td  colspan="2" >    <table border="1">
+	
+		
+			<td ><span id="productos_comprados"></span></td>
+			<td ><span id="productos_cantidades"></span></td>
+		
+		</table>    </td>
+			
+			
+          </tr>
+		  
+		  
+		  
+		  
+          <tr>
+            <td colspan="2" align="center"><strong>COMENTARIO / ACLARACI&Oacute;N</strong></td>
+
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <textarea class "form-control" name="Comentario" cols="70" rows="4" id="Comentario" tabindex="16" input="input"></textarea>
+              </textarea>
+              </textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="left">&nbsp;</td>
+
+          </tr>
+          <tr>
+            <td><div align="right">
+                <input class="btn btn-warning" type="submit" name="input" value="Enviar Formulario" tabindex="17"/>
+              </div></td>
+            <td><input  class="btn btn-danger" type="reset" name="Resetear" value="Borrar Datos Personales" tabindex="18"/>
+			 <input type="hidden" class="form-control" value="pendiente" name="estado" required/>
+			</td>
+          </tr>
+        </table>
+      </form></td>
+
+    <td class="tablaBordeDer">&nbsp;</td>
+  </tr>
+  <tr >
+    <td class="tablaAba" colspan="3"></td>
+  </tr>
+</table>
+</div>
+
+</script>
+<script type="text/javascript">
+_uacct = "UA-2215132-8";
+urchinTracker();
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+</script>
+</body>
+</html>
+
+

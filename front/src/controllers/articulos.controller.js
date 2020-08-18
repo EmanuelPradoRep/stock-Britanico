@@ -17,12 +17,10 @@ export default async () => {
 
   articulos.forEach((i) => {
     articulosElement.innerHTML += `
-      <li class="list-group-item border-primary bg-dark text-white">
-      <h5>${i.title}</h5>
-      <p>
-      ${i.body}
-      </p>
-      </li>
+      <tr>
+        <th>${i.title}</th>
+        <th>${i.body}</th>
+      </tr>
     `;
   });
 
